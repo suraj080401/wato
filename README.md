@@ -17,11 +17,11 @@ This is a basic Expo React Native project with three screens: Landing page, Sign
    ```bash
    npm install -g expo-cli
 3. Install project dependencies by running:
-   ```
-   bash npm install
+   ```bash
+   npm install
 5. Start the Expo development server by running:
-   ```
-   bash npm start
+   ```bash
+   npm start
 7. Wait for the Expo Dev Tools webpage to open in your default browser.
 8. Open the Expo Go app on your mobile device.
 9. Scan the QR code displayed in the terminal or Expo Dev Tools webpage using the Expo Go app.
