@@ -72,19 +72,46 @@ export default function SignUp({ navigation }) {
 							</Text>
 						</View>
 						<ActionButtons title={"Sign Up"} />
-						<View style={{ marginVertical: 20 }}>
-							<Text style={{ textAlign: "center", color: "#888" }}>
-								Already have and account?
+						<View
+							style={{
+								display: "flex",
+								flexDirection: "row",
+								justifyContent: "center",
+								marginTop: 10,
+							}}
+						>
+							<Text
+								style={{
+									fontSize: 12,
+									color: "#fff",
+									textAlign: "center",
+									marginVertical: 15,
+								}}
+							>
+								Already have an account?
+							</Text>
+							<TouchableOpacity
+								style={{
+									display: "flex",
+									justifyContent: "center",
+
+									height: 40,
+								}}
+								onPress={() => {
+									navigation.navigate("SignIn");
+								}}
+							>
 								<Text
-									style={{ color: "#D4FB54" }}
-									onPress={() => {
-										navigation.navigate("SignIn");
+									style={{
+										fontSize: 12,
+										color: "#D4FB54",
+										marginTop: 5,
 									}}
 								>
 									{" "}
 									Sign in instead
 								</Text>
-							</Text>
+							</TouchableOpacity>
 						</View>
 						<View style={{ marginVertical: 10 }}>
 							<Text style={{ textAlign: "center", color: "#888" }}>or</Text>

@@ -6,6 +6,7 @@ import {
 	Dimensions,
 	Platform,
 	ScrollView,
+	TouchableOpacity,
 } from "react-native";
 
 import InputBox from "../components/InputBox";
@@ -43,19 +44,46 @@ export default function SignIn({ navigation }) {
 							</Text>
 						</View>
 						<ActionButtons title={"Login"} />
-						<View style={{ marginVertical: 20 }}>
-							<Text style={{ textAlign: "center", color: "#888" }}>
+						<View
+							style={{
+								display: "flex",
+								flexDirection: "row",
+								justifyContent: "center",
+								marginTop: 10,
+							}}
+						>
+							<Text
+								style={{
+									fontSize: 12,
+									color: "#fff",
+									textAlign: "center",
+									marginVertical: 15,
+								}}
+							>
 								New to our platform?
+							</Text>
+							<TouchableOpacity
+								style={{
+									display: "flex",
+									justifyContent: "center",
+
+									height: 40,
+								}}
+								onPress={() => {
+									navigation.navigate("SignUp");
+								}}
+							>
 								<Text
-									style={{ color: "#D4FB54" }}
-									onPress={() => {
-										navigation.navigate("SignUp");
+									style={{
+										fontSize: 12,
+										color: "#D4FB54",
+										marginTop: 5,
 									}}
 								>
 									{" "}
 									Create an account
 								</Text>
-							</Text>
+							</TouchableOpacity>
 						</View>
 						<View style={{ marginVertical: 10 }}>
 							<Text style={{ textAlign: "center", color: "#888" }}>or</Text>

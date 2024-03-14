@@ -4,6 +4,7 @@ import {
 	View,
 	ImageBackground,
 	Dimensions,
+	Platform,
 	TouchableOpacity,
 } from "react-native";
 import Button from "../components/Button";
@@ -22,8 +23,11 @@ export default function Home({ navigation }) {
 						style={{
 							fontSize: 50,
 							color: "#fff",
-							fontFamily: "Menlo-Bold",
+							fontFamily: `${
+								Platform.OS === "ios" ? "Menlo-Bold" : "monospace"
+							}`,
 							marginVertical: 10,
+							fontWeight: "bold",
 						}}
 					>
 						Wato
@@ -32,7 +36,7 @@ export default function Home({ navigation }) {
 						style={{
 							fontSize: 28,
 							color: "#fff",
-							fontFamily: "Menlo",
+							fontFamily: `${Platform.OS === "ios" ? "Menlo" : "monospace"}`,
 							marginVertical: 10,
 							lineHeight: 40,
 						}}
@@ -43,31 +47,45 @@ export default function Home({ navigation }) {
 				</View>
 				<View style={styles.buttonContainer}>
 					<Button navigation={navigation} />
-					<View>
+					<View
+						style={{
+							display: "flex",
+							flexDirection: "row",
+							justifyContent: "center",
+						}}
+					>
 						<Text
 							style={{
 								fontSize: 12,
 								color: "#fff",
 								textAlign: "center",
-								marginVertical: 10,
+								marginVertical: 15,
 							}}
 						>
 							Already have an account?
+						</Text>
+						<TouchableOpacity
+							style={{
+								display: "flex",
+								justifyContent: "center",
+
+								height: 40,
+							}}
+							onPress={() => {
+								navigation.navigate("SignIn");
+							}}
+						>
 							<Text
 								style={{
 									fontSize: 12,
 									color: "#D4FB54",
-									textAlign: "center",
-									marginVertical: 10,
-								}}
-								onPress={() => {
-									navigation.navigate("SignIn");
+									marginTop: 5,
 								}}
 							>
 								{" "}
 								Sign in instead
 							</Text>
-						</Text>
+						</TouchableOpacity>
 					</View>
 				</View>
 			</View>
