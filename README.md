@@ -1,4 +1,4 @@
-# My Expo React Native Project
+# Wato React Native Project
 
 This is a basic Expo React Native project with three screens: Landing page, Signup page, and Sign In page. All the screens are frontend only.
 
